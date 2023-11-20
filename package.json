@@ -1,0 +1,71 @@
+{
+  "name": "@boardroom/gov-sdk-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm run bootstrap",
+    "bootstrap": "lerna bootstrap",
+    "lint": "tsc --noEmit -p . && eslint './packages/*/src/**/*.ts' --fix",
+    "test": "jest --verbose --runInBand --config jest-unit.config.json --testPathIgnorePatterns=package-exports",
+    "test:package-snapshots": "jest --verbose --runInBand --config jest-unit.config.json --testPathPattern=package-exports",
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "nuke": "npm run clean && lerna clean -y && rm -rf ./node_modules",
+    "client:dev": "lerna run --stream dev --scope @boardroom/client-reference",
+    "client:compile": "lerna run --stream compile --scope @boardroom/client-reference",
+    "snapshots:update": "npm run build && npm test .snapshot. -- -u",
+    "version:bump": "lerna version --conventional-commits --no-changelog",
+    "version:prerelease": "lerna version --conventional-prerelease --no-changelog",
+    "publish": "lerna publish from-package",
+    "parity:check": "lerna run --stream parity:check --scope @boardroom/script-parity-check"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "files": [
+      "./packages/*/src/**/*.ts"
+    ],
+    "printWidth": 120,
+    "parser": "typescript"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "ignorePatterns": [
+      "**/node_modules/*",
+      "**/*snapshot.spec.ts"
+    ],
+    "rules": {}
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.22",
+    "@typescript-eslint/eslint-plugin": "4.21.0",
+    "@typescript-eslint/parser": "4.21.0",
+    "dotenv": "16.3.1",
+    "eslint": "7.24.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "jest": "26.6.3",
+    "lerna": "4.0.0",
+    "prettier": "2.2.1",
+    "ts-jest": "26.5.4",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.4"
+  },
+  "dependencies": {
+    "@shutter-network/shutter-crypto": "^0.1.0-beta.3",
+    "os-browserify": "^0.3.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

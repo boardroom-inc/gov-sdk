@@ -1,0 +1,12 @@
+{
+  "name": "@boardroom/gov-sdk",
+  "version": "0.16.117",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf ./dist"
+  },
+  "dependencies": {
+    "@boardroom/gov-lib": "^0.16.117",
+    "@boardroom/gov-protocols": "^0.16.117"
+  }
+}

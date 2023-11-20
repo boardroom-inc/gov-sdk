@@ -1,0 +1,32 @@
+{
+  "name": "@boardroom/client-reference",
+  "version": "0.16.117",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf ./dist ./.cache",
+    "dev": "webpack serve --config=./webpack.dev.js",
+    "compile": "webpack --config=./webpack.dev.js"
+  },
+  "dependencies": {
+    "@boardroom/gov-protocols": "^0.16.117",
+    "@boardroom/gov-sdk": "^0.16.117",
+    "@metamask/detect-provider": "1.2.0",
+    "@orcaprotocol/orca-sdk": "1.5.5",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.2",
+    "@usedapp/core": "^0.4.0",
+    "buffer": "^6.0.3",
+    "dotenv": "16.3.1",
+    "ethers": "5.7.0",
+    "html-webpack-plugin": "5.3.1",
+    "os-browserify": "0.3.0",
+    "path-browserify": "1.0.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-hot-loader": "4.13.0",
+    "ts-loader": "8.0.18",
+    "webpack": "5.27.1",
+    "webpack-cli": "4.5.0",
+    "webpack-dev-server": "3.11.2"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"molochvote.js","sourceRoot":"","sources":["../../src/adapters/molochvote.ts"],"names":[],"mappings":";;;AAAA,+CAAiD;AACjD,4DAA+D;AAE/D,qCAA8C;AAMjC,QAAA,iBAAiB,GAAG,cAAI,CAAC,MAAM,EAAE,CAAC;AAWlC,QAAA,qBAAqB,GAAyC;IACzE,YAAY,EAAE,IAAA,2CAAuB,EAAC,kBAAS,CAAC;IAChD,UAAU,EAAE,IAAA,2CAAuB,EAAC,yBAAiB,CAAC;IACtD,UAAU,EAAE,IAAA,2CAAuB,EAAC,gBAAO,CAAC;CAC7C,CAAC"}

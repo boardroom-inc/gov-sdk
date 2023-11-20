@@ -1,0 +1,115 @@
+{
+  "collapseTableOfContents": false,
+  "items": [
+    {
+      "type": "item",
+      "title": "Getting Started",
+      "uri": "/docs/Getting Started.md"
+    },
+    {
+      "type": "group",
+      "title": "Examples",
+      "items": [
+        {
+          "title": "Cast Vote",
+          "type": "item",
+          "uri": "/docs/Cast Vote.md"
+        },
+        {
+          "title": "Delegate Vote Power",
+          "type": "item",
+          "uri": "/docs/Delegate Vote Power.md"
+        }
+        ]
+    },
+    {
+      "type": "group",
+      "title": "Adapters",
+      "uri": "/docs/Adapters.md",
+      "items": [
+          {
+            "type": "item",
+            "title": "Vote Adapter",
+            "uri": "/docs/Vote Adapter.md"
+          },
+           {
+            "type": "item",
+            "title": "Delegation Adapter",
+            "uri": "/docs/Delegation Adapter.md"
+          },
+          {
+            "type": "item",
+            "title": "Proposal Adapter",
+            "uri": "/docs/Proposal Adapter.md"
+          },
+          {
+            "type": "item",
+            "title": "Staking Adapter",
+            "uri": "/docs/Staking Adapter.md"
+          }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Frameworks",
+      "uri": "/docs/Frameworks.md",
+      "items":[
+        {
+          "type": "item",
+          "title": "Snapshot",
+          "uri": "/docs/Snapshot.md"
+        },
+        {
+          "type": "item",
+          "title": "Compound Governor Alpha",
+          "uri": "/docs/Compound Governor Alpha.md"
+        },
+        {
+          "type": "item",
+          "title": "Compound Governor Bravo",
+          "uri": "/docs/Compound Governor Bravo.md"
+        },
+        {
+          "type": "item",
+          "title": "Open Zeppelin Governor",
+          "uri": "/docs/Open Zeppelin Governor.md"
+        },
+        {
+          "type": "item",
+          "title": "Aave Governance V2",
+          "uri": "/docs/Aave Governance V2.md"
+        },
+        {
+          "type": "item",
+          "title": "Optimism Governor",
+          "uri": "/docs/Optimism Governor.md"
+        },
+        {
+          "type": "item",
+          "title": "Moloch Governor",
+          "uri": "/docs/Moloch Governor.md"
+        },
+        {
+          "type": "item",
+          "title": "Nouns Governor",
+          "uri": "/docs/Nouns Governor.md"
+        },
+        {
+          "type": "item",
+          "title": "Nouns Builder",
+          "uri": "/docs/Nouns Builder.md"
+        },
+        {
+          "type": "item",
+          "title": "Council",
+          "uri": "/docs/Council.md"
+        },        
+        {
+          "type": "item",
+          "title": "Maker",
+          "uri": "/docs/Maker.md"
+        }
+      ]
+    }
+  ]
+}
