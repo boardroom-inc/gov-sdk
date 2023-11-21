@@ -1,6 +1,6 @@
 {
-  "name": "@boardroom/gov-lib",
-  "version": "0.16.117",
+  "name": "@boardroom/governance-lib",
+  "version": "0.0.0",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf ./dist"

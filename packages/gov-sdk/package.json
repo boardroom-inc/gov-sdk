@@ -1,5 +1,5 @@
 {
-  "name": "@boardroom/gov-sdk",
+  "name": "@boardroom/governance-sdk",
   "version": "0.16.117",
   "scripts": {
     "build": "tsc",

@@ -1,6 +1,6 @@
 {
-  "name": "@boardroom/gov-protocols",
-  "version": "0.16.117",
+  "name": "@boardroom/governance-protocols",
+  "version": "0.0.0",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf ./dist"
