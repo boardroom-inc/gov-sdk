@@ -1,0 +1,157 @@
+[
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "proposalId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "proposer",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "votingModule",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bytes",
+                "name": "proposalData",
+                "type": "bytes"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "startBlock",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "endBlock",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "description",
+                "type": "string"
+            }
+        ],
+        "name": "ProposalCreated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "voter",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "proposalId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint8",
+                "name": "support",
+                "type": "uint8"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "weight",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "reason",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "bytes",
+                "name": "params",
+                "type": "bytes"
+            }
+        ],
+        "name": "VoteCastWithParams",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "proposalId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint8",
+                "name": "support",
+                "type": "uint8"
+            },
+            {
+                "internalType": "string",
+                "name": "reason",
+                "type": "string"
+            },
+            {
+                "internalType": "bytes",
+                "name": "params",
+                "type": "bytes"
+            }
+        ],
+        "name": "castVoteWithReasonAndParams",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "contract VotingModule",
+                "name": "module",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes",
+                "name": "proposalData",
+                "type": "bytes"
+            },
+            {
+                "internalType": "string",
+                "name": "description",
+                "type": "string"
+            }
+        ],
+        "name": "proposeWithModule",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

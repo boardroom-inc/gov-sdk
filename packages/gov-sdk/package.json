@@ -1,6 +1,6 @@
 {
   "name": "@boardroom/governance-sdk",
-  "version": "0.16.117",
+  "version": "0.0.0",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf ./dist"
