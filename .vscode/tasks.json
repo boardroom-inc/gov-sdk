@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "💻 Run reference client app locally",
+      "type": "shell",
+      "command": "npm run client:dev",
+      "problemMatcher": [],
+    },
+    {
+      "label": "🖼 Rebuild packages and update snapshots",
+      "type": "shell",
+      "command": "npm run snapshots:update",
+      "problemMatcher": [],
+    },
+    {
+      "label": "🚀 Rebuild, tag, and publish a new version",
+      "type": "shell",
+      "command": "npm run clean && npm run build && npm test && npm run version:bump && npm run publish",
+      "problemMatcher": [],
+    },
+    {
+      "label": "🚧 Rebuild, tag, and publish a new PRERELEASE version",
+      "type": "shell",
+      "command": "npm run clean && npm run build && npm test && npm run version:prerelease && npm run publish",
+      "problemMatcher": [],
+    },
+    {
+      "label": "🕵️‍♀️ Check parity with protocol-info",
+      "type": "shell",
+      "command": "npm run build && npm run parity:check",
+      "problemMatcher": [],
+    },
+  ],
+  "inputs": [
+
+  ]
+}

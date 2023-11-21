@@ -1,0 +1,45 @@
+name: Build and Deploy client reference to Netlify 
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on pull request events
+  pull_request:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Set auth token
+        run: npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: install
+        run: npm i
+
+      - name: Build
+        run: npm run client:compile
+
+      - name: Deploy
+        uses: nwtgck/actions-netlify@v1.1.11
+        with:
+          deploy-message: ${{ github.event.head_commit.message }}
+          alias: pr-${{ github.event.pull_request.number }}
+          enable-commit-comment: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          production-deploy: false
+          publish-dir: './packages/client-reference/dist'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_STAGING_SITE_ID }}

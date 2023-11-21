@@ -1,5 +1,5 @@
 {
-  "name": "@boardroom/gov-sdk-monorepo",
+  "name": "@boardroom/governance-sdk",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -67,5 +67,27 @@
     "os-browserify": "^0.3.0",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1"
-  }
+  },
+  "description": "The Governance SDK is a portable protocol agnostic governance interoperability framework built for NodeJS and the browser. It makes it easier for developers to query and interact with protocol governance in a normalized way by leveraging community-authored protocol integrations.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boardroom-inc/gov-sdk.git"
+  },
+  "keywords": [
+    "Boardroom",
+    "governance",
+    "SDK",
+    "gov",
+    "DAO"
+  ],
+  "author": "Carl Gocht",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/boardroom-inc/gov-sdk/issues"
+  },
+  "homepage": "https://github.com/boardroom-inc/gov-sdk#readme"
 }

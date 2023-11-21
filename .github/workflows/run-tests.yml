@@ -1,0 +1,28 @@
+name: run-tests
+on: [ push ]
+jobs:
+  run-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - name: Set auth token
+      run: npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
+      env:
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+    - name: Install dependencies
+      run: npm ci
+      env:
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+    - name: Lint and typecheck code
+      run: npm run lint
+    - name: Ensure reference client compiles
+      run: npm run client:compile
+    - name: Build all packages
+      run: npm run build
+    - name: Run unit tests
+      run: npm test
+    - name: Assert package snapshot unchanged
+      run: npm run test:package-snapshots
