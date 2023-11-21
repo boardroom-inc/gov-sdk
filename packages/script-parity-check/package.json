@@ -1,6 +1,6 @@
 {
   "name": "@boardroom/governance-script-parity-check",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "parity:check": "ts-node -P ../../tsconfig.json ./src/parity-check.ts"
