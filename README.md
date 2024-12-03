@@ -10,6 +10,12 @@ For usage and guides on actually using the SDK, see the GitBook documentation:
 
 The in-repo documentation will primarily focus on architecture and implementation details.
 
+## Getting help
+
+If you have questions, concerns, bug reports, etc, please file an issue in this repository's Issue Tracker.
+
+You can also reach out to us in our discord at https://discord.com/invite/CEZ8WfuK8s
+
 ## Repo Structure
 
 The project is structured as a monorepo managed by lerna.
@@ -26,10 +32,6 @@ The project is structured as a monorepo managed by lerna.
 ### Scripts
 
 * Packages should implement any cleanup of build artifacts, caches, etc in an optional `clean` npm script.
-
-### IDE Integration
-
-To help onboard contribution, portable IDE configuration should be checked into the repo.
 
 ## Architecture
 
@@ -50,9 +52,46 @@ Common _adapter implementations_ are shipped in the `gov-adapters` package for g
 
 ## Development
 
-Requirements:
+### Testing and Configuration for using the reference client
 
-* NodeJS v14 (`nvm` recommended)
+The reference client can be used to test each aspect of the sdk. 
+
+A .env file will need to be created within /gov-sdk/packages/client-reference and API keys for various services will need to be added. To have every feature working within the reference client all keys will need to be added however most features will work with just the Alchemy key for the respective chain you are wishing to test on or the Snapshot API key if testing Snapshot protocols.
+
+An example .env file without any keys:
+```
+ALCHEMY_MAINNET_KEY=""
+ALCHEMY_OPTIMISM_KEY=""
+ALCHEMY_ARBITRUM_KEY=""
+ALCHEMY_GOERLI_KEY=""
+BOARDROOM_API_KEY=""
+ETHERSCAN_MAINNET_API_KEY=""
+ETHERSCAN_OPTIMISM_API_KEY=""
+SNAPSHOT_API_KEY=""
+```
+
+Within the ProtocolInfo.tsx file set the protocol cname to test as well as the adapter type and an address for vote power testing if applicable. 
+
+```
+  // Add the cnames of any protocols to test here
+  const protocolsToTest = ['ens'];
+  // Framework instance to test with. (default/snapshot/onchain)
+  const instancesToTest = ['onchain'];
+  // Add address that should have voting power here
+  const votePowerAddress = '0x8d5237037A590A2dB531F3CfB8f42605cF306f34';
+```
+
+Features within the ProtocolInfo.tsx file can be commented out to turn them on or off when running the client.
+
+Run the reference client in debug mode (reloads on changes):
+
+```
+$ npm run client:dev
+```
+
+### Requirements:
+
+* NodeJS v16 (`nvm` recommended)
 
 Install all dependencies in all packages and bootstrap the monorepo:
 
